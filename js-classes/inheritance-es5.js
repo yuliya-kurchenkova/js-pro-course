@@ -32,5 +32,37 @@ function Car(name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption, 
      return this.kilometers / this.maxSpeed;
    
     }
+    function BMW (name, model, panoramicRoof){
+        Car.call(this, name, model);
+        this.panoramicRoof = panoramicRoof;
+    }
+    BMW.prototype = Object.create(Car.prototype);
+    BMW.prototype.constructor = BMW;
+    BMW.prototype.fastDriving = function (){
+        console.log('Их-уууу')
+    }
+    const bmw = new BMW('BMW', 'E23', 'yes');
     
-  const cars = new Car('Honda', 'Accord', 25, 'red');
+    
+    function Lexus (name, model, climateСontrol){
+        Car.call(this, name, model);
+        this.climateСontrol = climateСontrol;
+    }
+    Lexus.prototype = Object.create(Car.prototype);
+    Lexus.prototype.constructor = Lexus;
+    Lexus.prototype.veryСool = function (){
+        console.log('Еееее')
+    }
+    
+    const lexus = new Lexus('Lexus', 'UX', 'yes');
+    
+        function Zhiguli (name, model, windowLifter){
+        Car.call(this, name, model);
+        this.windowLifter = windowLifter;
+    }
+    Zhiguli.prototype = Object.create(Car.prototype);
+    Zhiguli.prototype.constructor = Zhiguli;
+    Zhiguli.prototype.sometimesWork = function (){
+        console.log(':(')
+    }
+    const zhiguli = new Zhiguli('Zhiguli', 'ВАЗ-2103', 'yes');
