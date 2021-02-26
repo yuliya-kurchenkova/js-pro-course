@@ -11,8 +11,10 @@ function Car(name, model, year, color, maxSpeed){
   Car.prototype.getFullName = function(){ 
     return console.log(`${this.name} ${this.model}`);
   }
-  Car.prototype.getAge = function(){ 
-      return 2021 - this.year;
+  Car.prototype.getAge = function(){
+      let date = new Date();
+      let yearActuel = date.getFullYear();
+      return console.log(`Данная машина с ${yearActuel - this.year} года`);
     }
   Car.prototype.changeColor = function(color){ 
       if (this.color === 'red'){
