@@ -39,15 +39,18 @@ function Car(name, model, year, color, maxSpeed){
          console.log(`Среднее время пути ${travelTime.toFixed()} часов`)
      };
     }
-    function BMW (name, model, panoramicRoof){
-        Car.call(this, name, model);
+    function BMW (panoramicRoof, ...rest){
+        this._super.apply(this, rest); // или this._super.call(this, ...rest)
         this.panoramicRoof = panoramicRoof;
     }
     BMW.prototype = Object.create(Car.prototype);
     BMW.prototype.constructor = BMW;
+    BMW.prototype._super = Car;
+
     BMW.prototype.fastDriving = function (){
         console.log('Их-уууу')
     }
+
     const bmw = new BMW('BMW', 'E23', 'yes');
     
     
