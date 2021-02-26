@@ -16,12 +16,11 @@ function Car(name, model, year, color, maxSpeed){
       let yearActuel = date.getFullYear();
       return console.log(`Данная машина с ${yearActuel - this.year} года`);
     }
-  Car.prototype.changeColor = function(color){ 
-      if (this.color === 'red'){
-          console.log('Авто уже покрашено в красный цвет')
+  Car.prototype.changeColor = function(newColor = this.color){ 
+      if (this.color != newColor){
+          return console.log(`Авто уже покрашено в ${this.color} цвет`)
       }else{
-          this.color === color;
-          console.log(`Цвет стал ${this.color}`);
+          return console.log(`Цвет стал ${newColor}`);
       };
     };
     Car.prototype.calculateWay = function(kilometers, fuel){
