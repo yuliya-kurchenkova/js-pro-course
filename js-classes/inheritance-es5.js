@@ -54,24 +54,27 @@ function Car(name, model, year, color, maxSpeed){
     const bmw = new BMW('BMW', 'E23', 'yes');
     
     
-    function Lexus (name, model, climateСontrol){
-        Car.call(this, name, model);
+    function Lexus (climateСontrol, ...rest){
+        this._super.apply(this, rest);
         this.climateСontrol = climateСontrol;
     }
     Lexus.prototype = Object.create(Car.prototype);
     Lexus.prototype.constructor = Lexus;
+    BMW.prototype._super = Car;
     Lexus.prototype.veryСool = function (){
         console.log('Еееее')
     }
     
     const lexus = new Lexus('Lexus', 'UX', 'yes');
     
-        function Zhiguli (name, model, windowLifter){
-        Car.call(this, name, model);
+    function Zhiguli (windowLifter, ...rest){
+        this._super.apply(this, rest);
         this.windowLifter = windowLifter;
     }
     Zhiguli.prototype = Object.create(Car.prototype);
     Zhiguli.prototype.constructor = Zhiguli;
+    BMW.prototype._super = Car;
+
     Zhiguli.prototype.sometimesWork = function (){
         console.log(':(')
     }
