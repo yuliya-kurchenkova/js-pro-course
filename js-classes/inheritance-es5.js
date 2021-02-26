@@ -23,14 +23,21 @@ function Car(name, model, year, color, maxSpeed){
           return console.log(`Цвет стал ${newColor}`);
       };
     };
-    Car.prototype.calculateWay = function(kilometers, fuel){
-     if (this.fuel < 10){
-         console.log('Меньше 10')
-     }else{
-         
+    Car.prototype.calculateWay = function(kilometers, fuel = this.fuelCapacity){
+        let fuelForTravel = kilometers / this.fuelConsumption;
+        let start;
+     if (fuel < 10){
+         console.log('Нужно заправиться');
+         return start = false;
+     }else if(fuel < fuelForTravel){
+         fuelForTravel -= fuel;
+         console.log(`Нужно будет заправить ${fuelForTravel} литра`);
+         return start = false;
+     }else if(start){
+         let averageSpeed = 80;
+         let travelTime = kilometers / averageSpeed;
+         console.log(`Среднее время пути ${travelTime.toFixed()} часов`)
      };
-     return this.kilometers / this.maxSpeed;
-   
     }
     function BMW (name, model, panoramicRoof){
         Car.call(this, name, model);
