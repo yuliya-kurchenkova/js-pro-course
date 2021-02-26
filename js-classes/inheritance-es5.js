@@ -9,7 +9,7 @@ function Car(name, model, year, color, maxSpeed){
 
   }
   Car.prototype.getFullName = function(){ 
-    return this.name + ',' + this.model;
+    return console.log(`${this.name} ${this.model}`);
   }
   Car.prototype.getAge = function(){ 
       return 2021 - this.year;
