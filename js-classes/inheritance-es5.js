@@ -1,4 +1,4 @@
-function Car(name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption, kilometers, fuel){
+function Car(name, model, year, color, maxSpeed){
     this.name = name;
     this.model = model;
     this.year = year;
@@ -6,8 +6,7 @@ function Car(name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption, 
     this.maxSpeed = maxSpeed;
     this.fuelCapacity = 60;
     this.fuelConsumption = 10;
-    this.kilometers = kilometers; 
-    this.fuel = fuel;
+
   }
   Car.prototype.getFullName = function(){ 
     return this.name + ',' + this.model;
